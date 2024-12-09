@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Título Principal */}
         <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4">
-          ¡Hola, soy <span className="text-yellow-400">Andrés Piuzzi</span>!
+          ¡Hola, soy <span className="text-yellow-300">Andrés Piuzzi</span>!
         </h1>
 
         <h2 className="text-base sm:text-xl text-gray-300 mb-6 mt-4 max-w-3xl mx-auto leading-relaxed">
@@ -56,10 +56,10 @@ const Hero = () => {
 
         {/* Botenes Secciones */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 font-roboto font-bold">
-          <button className="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
+          <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
             Mis Proyectos
           </button>
-          <button className="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
+          <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
             Contáctame
           </button>
         </div>

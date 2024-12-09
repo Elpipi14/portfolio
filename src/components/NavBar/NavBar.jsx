@@ -52,18 +52,6 @@ const NavBar = () => {
             </a>
             <a
               href="#"
-              className="rounded-md bg-gray-900 px-3 py-2 text-white hover:bg-gray-700"
-            >
-              Sobre mi
-            </a>
-            <a
-              href="#"
-              className="rounded-md bg-gray-900 px-3 py-2 text-white hover:bg-gray-700"
-            >
-              Skill
-            </a>
-            <a
-              href="#"
               className="rounded-md bg-gray-900 px-3 py-2  text-white hover:bg-gray-700"
             >
               Projectos
@@ -87,18 +75,6 @@ const NavBar = () => {
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Inicio
-            </a>
-            <a
-              href="#"
-              className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-             Sobre Mi
-            </a>
-            <a
-              href="#"
-              className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Skill
             </a>
             <a
               href="#"
