@@ -1,6 +1,10 @@
-import Footer from "../components/Footer/Footer";
-import Hero from "../components/Hero/Hero";
+
+
 import NavBar from "../components/NavBar/NavBar";
+import Hero from "../components/Hero/Hero";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -10,8 +14,13 @@ const Index = () => {
         backgroundImage: "url('https://source.unsplash.com/random/1600x900')",
       }}
     >
-      <NavBar />
-      <Hero />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+        <Route path='/' element={<Hero />} />
+          <Route path='/contacto' element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </div>
   );

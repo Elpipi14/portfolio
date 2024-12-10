@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo/piuweb.png";
 
 const NavBar = () => {
@@ -43,52 +44,46 @@ const NavBar = () => {
 
         {/* Menú en pantallas grandes */}
         <div className="hidden customMedia:block">
-          <div className="flex space-x-2 font-mono text-[14px]">
-            <a
-              href="#"
+          <ul className="flex space-x-2 font-mono text-[14px]">
+            <li
               className="rounded-md bg-gray-900 px-3 py-2 text-white hover:bg-gray-700"
             >
-              Inicio
-            </a>
-            <a
-              href="#"
+             <Link to="/">Inicio</Link>
+            </li>
+            <li
               className="rounded-md bg-gray-900 px-3 py-2  text-white hover:bg-gray-700"
             >
               Projectos
-            </a>
-            <a
-              href="#"
+            </li>
+            <li
               className="rounded-md bg-gray-900 px-3 py-2  text-white hover:bg-gray-700"
             >
-              Contacto
-            </a>
-          </div>
+            <Link to="/contacto">contacto</Link>
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* Menú móvil desplegable */}
       {isMenuOpen && (
         <div className="customMedia:hidden" id="mobile-menu">
-          <div className="flex flex-col items-center px-2 pb-3 pt-2 mt-8 font-mono text-[14px]">
-            <a
-              href="#"
+          <ul className="flex flex-col items-center px-2 pb-3 pt-2 mt-8 font-mono text-[14px]">
+            <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              Inicio
-            </a>
-            <a
-              href="#"
+              <Link to="/">inicio</Link>
+            </li>
+            <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Projectos
-            </a>
-            <a
-              href="#"
+            </li>
+            <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              Contacto
-            </a>
-          </div>
+             <Link to="/contacto">contacto</Link>
+            </li>
+          </ul>
         </div>
       )}
     </nav>
