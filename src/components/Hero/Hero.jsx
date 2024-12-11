@@ -6,18 +6,20 @@ import GithubIcons from "../../assets/logo/Github.svg";
 const Hero = () => {
   return (
     <section className="m-1 py-2 my-10 px-1 mx-1 text-white h-auto flex items-center justify-center">
-
-      
-  
       {/* IMG Principal */}
-      <div className="text-center px-2 sm:px-8">
+      <div className="text-center px-4 mx-4 sm:px-8">
       
-        <div className="flex justify-center sm:flex-row-reverse sm:justify-start ">
+        <div className="flex flex-row-reverse justify-between items-end">
           <img
             className="w-52 h-52 p-1 rounded-full object-cover static"
             src="https://avatars.githubusercontent.com/u/107086659?v=4"
             alt="piuDev"
           />
+
+        {/* Título a la Derecha */}
+        <h1 className="px-4 w-28 text-4xl sm:text-5xl sm:text-center font-extrabold text-yellow-300">
+          PortFolio
+        </h1>
         </div>
 
         {/* SocilaPills */}

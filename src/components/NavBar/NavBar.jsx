@@ -58,7 +58,7 @@ const NavBar = () => {
             <li
               className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
             >
-            <Link to="/contacto">contacto</Link>
+            <Link to="/contacto">Contacto</Link>
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ const NavBar = () => {
             <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              <Link to="/">inicio</Link>
+              <Link to="/">Inicio</Link>
             </li>
             <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -81,7 +81,7 @@ const NavBar = () => {
             <li
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-             <Link to="/contacto">contacto</Link>
+             <Link to="/contacto">Contacto</Link>
             </li>
           </ul>
         </div>
