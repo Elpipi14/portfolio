@@ -44,19 +44,19 @@ const NavBar = () => {
 
         {/* Menú en pantallas grandes */}
         <div className="hidden customMedia:block">
-          <ul className="flex space-x-2 font-mono text-[14px]">
+          <ul className="flex space-x-2 font-mono text-[16px] ">
             <li
-              className="rounded-md bg-gray-900 px-3 py-2 text-white hover:bg-gray-700"
+              className="rounded-md bg-gray-900 px-5 py-3 text-white hover:bg-gray-700 cursor-pointer"
             >
              <Link to="/">Inicio</Link>
             </li>
             <li
-              className="rounded-md bg-gray-900 px-3 py-2  text-white hover:bg-gray-700"
+              className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
             >
               Projectos
             </li>
             <li
-              className="rounded-md bg-gray-900 px-3 py-2  text-white hover:bg-gray-700"
+              className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
             >
             <Link to="/contacto">contacto</Link>
             </li>

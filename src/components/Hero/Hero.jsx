@@ -6,8 +6,12 @@ import GithubIcons from "../../assets/logo/Github.svg";
 const Hero = () => {
   return (
     <section className="m-1 py-2 my-10 px-1 mx-1 text-white h-auto flex items-center justify-center">
+
+      
+  
       {/* IMG Principal */}
       <div className="text-center px-2 sm:px-8">
+      
         <div className="flex justify-center sm:flex-row-reverse sm:justify-start ">
           <img
             className="w-52 h-52 p-1 rounded-full object-cover static"
@@ -43,14 +47,14 @@ const Hero = () => {
           </span>
           <span className="text-[rgba(189,86,86,0.951)] font-bold italic block sm:inline">
             {" "}
-            complete varios cursos en tecnologías front-end y back-end
+            he completado varios cursos en tecnologías front-end y back-end 🚀.
           </span>
           <span className="block sm:inline">
             {" "}
-            Ahora estoy buscando hacer la transición a una carrera en
-            desarrollo, donde pueda aplicar mis habilidades y seguir creciendo
+            Ahora estoy buscando hacer la transición a una carrera en desarrollo
+            de software, donde pueda aplicar mis habilidades y seguir creciendo
             como profesional. Tengo muchas ganas de asumir nuevos retos y
-            contribuir en proyectos innovadores.
+            contribuir a proyectos innovadores.
           </span>
         </h2>
 
