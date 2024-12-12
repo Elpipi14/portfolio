@@ -51,7 +51,7 @@ const NavBar = () => {
              <Link to="/">Inicio</Link>
             </li>
             <li
-              className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
+              className="rounded-md bg-gray-900 px-5 py-3  text-red-400 hover:bg-gray-700 cursor-pointer"
             >
               Projectos
             </li>
