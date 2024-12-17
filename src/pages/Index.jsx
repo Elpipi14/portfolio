@@ -2,9 +2,11 @@
 
 import NavBar from "../components/NavBar/NavBar";
 import Hero from "../components/Hero/Hero";
+import Proyects from "../components/Proyects/Proyects";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 const Index = () => {
   return (
@@ -18,7 +20,8 @@ const Index = () => {
         <NavBar />
         <Routes>
         <Route path='/' element={<Hero />} />
-          <Route path='/contacto' element={<Contact />} />
+        <Route path='/contacto' element={<Contact />} />
+        <Route path='/proyectos' element={<Proyects />} />
         </Routes>
       </BrowserRouter>
       <Footer />

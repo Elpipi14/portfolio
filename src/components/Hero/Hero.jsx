@@ -11,7 +11,7 @@ const Hero = () => {
       
         <div className="flex flex-row-reverse justify-between items-end">
           <img
-            className="w-52 h-52 p-1 rounded-full object-cover static"
+            className="w-52 h-52 p-6 rounded-full object-cover static"
             src="https://avatars.githubusercontent.com/u/107086659?v=4"
             alt="piuDev"
           />
@@ -36,7 +36,7 @@ const Hero = () => {
 
         {/* Título Principal */}
         <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4">
-          ¡Hola, soy <span className="text-yellow-300">Andrés Piuzzi</span>!
+        ¡Hola, soy <span className="text-yellow-300">Andrés Piuzzi</span>!
         </h1>
 
         <h2 className="text-base sm:text-xl text-gray-300 mb-6 mt-4 max-w-3xl mx-auto leading-relaxed">
@@ -59,6 +59,7 @@ const Hero = () => {
             contribuir a proyectos innovadores.
           </span>
         </h2>
+        
 
         {/* Botenes Secciones */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 font-roboto font-bold">
