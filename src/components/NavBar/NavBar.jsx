@@ -5,6 +5,7 @@ import logo from "../../assets/logo/piuweb.png";
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <nav className="bg-gray-800 h-auto px-2 py-8">
@@ -45,21 +46,21 @@ const NavBar = () => {
         {/* Menú en pantallas grandes */}
         <div className="hidden customMedia:block">
           <ul className="flex space-x-2 font-mono text-[16px] ">
-            <li
+            <Link to="/"
               className="rounded-md bg-gray-900 px-5 py-3 text-white hover:bg-gray-700 cursor-pointer"
             >
-             <Link to="/">Inicio</Link>
-            </li>
-            <li
+             Inicio
+            </Link>
+            <Link to="/proyectos"
               className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
             >
-              <Link to="/proyectos">Projectos</Link>
-            </li>
-            <li
-              className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
+              Projectos
+            </Link>
+            <Link
+              to="/contacto" className="rounded-md bg-gray-900 px-5 py-3  text-white hover:bg-gray-700 cursor-pointer"
             >
-            <Link to="/contacto">Contacto</Link>
-            </li>
+            Contacto
+            </Link>
           </ul>
         </div>
       </div>
@@ -68,21 +69,21 @@ const NavBar = () => {
       {isMenuOpen && (
         <div className="customMedia:hidden" id="mobile-menu">
           <ul className="flex flex-col items-center px-2 pb-3 pt-2 mt-8 font-mono text-[14px]">
-            <li
+            <Link onClick={closeMenu} to="/"
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              <Link to="/">Inicio</Link>
-            </li>
-            <li
+              Inicio
+            </Link>
+            <Link onClick={closeMenu} to="/proyectos"
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Projectos
-            </li>
-            <li
+            </Link>
+            <Link onClick={closeMenu} to="/contacto"
               className="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-             <Link to="/contacto">Contacto</Link>
-            </li>
+             Contacto
+            </Link>
           </ul>
         </div>
       )}

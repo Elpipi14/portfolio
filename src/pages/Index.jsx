@@ -23,8 +23,8 @@ const Index = () => {
         <Route path='/contacto' element={<Contact />} />
         <Route path='/proyectos' element={<Proyects />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 };

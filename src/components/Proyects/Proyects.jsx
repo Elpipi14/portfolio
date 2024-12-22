@@ -1,5 +1,5 @@
 import ModuleProyect from "./ModuleProyect";
-import myProjects from "./proyects.js";
+import myProjects from "./devPage";
 
 const Projects = () => {
    

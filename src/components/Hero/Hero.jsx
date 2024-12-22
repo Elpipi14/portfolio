@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SocialPills from "../SocialPill/SocialPill";
 
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
@@ -8,7 +10,6 @@ const Hero = () => {
     <section className="m-1 py-2 my-10 px-1 mx-1 text-white h-auto flex items-center justify-center">
       {/* IMG Principal */}
       <div className="text-center px-4 mx-4 sm:px-8">
-      
         <div className="flex flex-row-reverse justify-between items-end">
           <img
             className="w-52 h-52 p-6 rounded-full object-cover static"
@@ -16,10 +17,10 @@ const Hero = () => {
             alt="piuDev"
           />
 
-        {/* Título a la Derecha */}
-        <h1 className="px-4 w-28 text-4xl sm:text-5xl sm:text-center font-extrabold text-yellow-300">
-          PortFolio
-        </h1>
+          {/* Título a la Derecha */}
+          <h1 className="px-4 w-28 text-4xl sm:text-5xl sm:text-center font-extrabold text-yellow-300">
+            PortFolio
+          </h1>
         </div>
 
         {/* SocilaPills */}
@@ -36,7 +37,7 @@ const Hero = () => {
 
         {/* Título Principal */}
         <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4">
-        ¡Hola, soy <span className="text-yellow-300">Andrés Piuzzi</span>!
+          ¡Hola, soy <span className="text-yellow-300">Andrés Piuzzi</span>!
         </h1>
 
         <h2 className="text-base sm:text-xl text-gray-300 mb-6 mt-4 max-w-3xl mx-auto leading-relaxed">
@@ -59,16 +60,19 @@ const Hero = () => {
             contribuir a proyectos innovadores.
           </span>
         </h2>
-        
 
         {/* Botenes Secciones */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 font-roboto font-bold">
-          <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
-            Mis Proyectos
-          </button>
+          <Link to="/proyectos">
+            <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
+              Mis Proyectos
+            </button>
+          </Link>
+          <Link to="/contacto">
           <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
             Contáctame
           </button>
+          </Link>
         </div>
       </div>
     </section>
