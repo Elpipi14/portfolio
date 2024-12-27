@@ -4,11 +4,12 @@ import SocialPills from "../SocialPill/SocialPill";
 
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
+import Skills from "../Skills/Skills";
 
 const Hero = () => {
   return (
     <section className="m-1 py-2 my-10 px-1 mx-1 text-white h-auto flex items-center justify-center">
-      {/* IMG Principal */}
+      {/* Contenedor Principal */}
       <div className="text-center px-4 mx-4 sm:px-8">
         <div className="flex flex-row-reverse justify-between items-end">
           <img
@@ -23,8 +24,8 @@ const Hero = () => {
           </h1>
         </div>
 
-        {/* SocilaPills */}
-        <div className="flex  justify-start ">
+        {/* SocialPills */}
+        <div className="flex justify-start mb-4">
           <SocialPills href="https://www.linkedin.com/in/andres-piuzzi/">
             <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5" />
             LinkedIn
@@ -56,22 +57,21 @@ const Hero = () => {
             {" "}
             Ahora estoy buscando hacer la transición a una carrera en desarrollo
             de software, donde pueda aplicar mis habilidades y seguir creciendo
-            como profesional. Tengo muchas ganas de asumir nuevos retos y
-            contribuir a proyectos innovadores.
+            como profesional.
           </span>
         </h2>
-
-        {/* Botenes Secciones */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 font-roboto font-bold">
+        <Skills />
+        {/* Botones Secciones */}
+        <div className="mx-4 my-10 py-2 flex flex-col sm:flex-row items-center justify-center gap-4 font-roboto font-bold mb-10">
           <Link to="/proyectos">
-            <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
+            <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105 active:translate-y-1 active:shadow-md">
               Mis Proyectos
             </button>
           </Link>
           <Link to="/contacto">
-          <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105  active:translate-y-1 active:shadow-md">
-            Contáctame
-          </button>
+            <button className="bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-gray-900 py-3 px-6 rounded-full shadow-lg transition-all hover:shadow-yellow-400/50 hover:scale-105 active:translate-y-1 active:shadow-md">
+              Contáctame
+            </button>
           </Link>
         </div>
       </div>

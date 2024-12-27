@@ -5,14 +5,14 @@ import GithubIcons from "../../assets/logo/Github.svg";
 
 const Contact = () => {
   return (
-    <div className="px-6 py-24 sm:py-12 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
-
-        <h2 className="text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl py-4 my-2">
-          Contactos:
+    <div className="px-2 py-8 my-8 sm:py-4 lg:px-4">
+      <div className="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:items-center">
+        <div className="mx-auto max-w-xl text-center">
+        <h2 className="text-3xl my-5 p-2 font-extrabold sm:text-5xl text-yellow-300">
+          Contacto:
         </h2>
         
-        <p className="text-xl text-yellow-100 drop-shadow-xl">
+        <p className="text-xl text-gray-300 drop-shadow-xl">
           Estoy en búsqueda de nuevas oportunidades. Si tienes un proyecto
           emocionante o una posición disponible, ¡me encantaría ser parte de tu
           equipo! 🚀
@@ -29,9 +29,10 @@ const Contact = () => {
             Github
           </SocialPills>
         </div>
+        </div>
       </div>
 
-      <form action="#" method="POST" className="mx-auto mt-4 max-w-xl sm:mt-12">
+      <form action="#" method="POST" className="mx-auto my-4 py-4 max-w-xl sm:mt-12">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label

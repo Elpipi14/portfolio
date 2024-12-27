@@ -12,16 +12,16 @@ const ModuleProyect = ({ projects }) => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-56 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 
           {/* Overlay oscuro */}
           <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-4">
             <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-            <p className="text-gray-300 text-center">{project.description}</p>
+            <p className="text-gray-300 font-bold text-center">{project.description}</p>
 
             {/* Skills animadas */}
-            <div className="mt-4 flex gap-4">
+            {/* <div className="mt-4 flex gap-4">
               {project.skills.map((skill, index) => (
                 <motion.span
                   key={index}
@@ -33,7 +33,7 @@ const ModuleProyect = ({ projects }) => {
                   {skill}
                 </motion.span>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

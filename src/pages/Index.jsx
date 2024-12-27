@@ -6,6 +6,7 @@ import Proyects from "../components/Proyects/Proyects";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "../Utils/ScrollToTop";
 
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       }}
     >
       <BrowserRouter>
+        <ScrollToTop />
         <NavBar />
         <Routes>
         <Route path='/' element={<Hero />} />
