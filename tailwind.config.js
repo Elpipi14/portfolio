@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import flyonui from "flyonui";
+import flyonuiPlugin from "flyonui/plugin";
+
 export default {
   darkMode: 'class',
   content: [
@@ -13,14 +16,12 @@ export default {
         roboto: ['Roboto', 'sans-serif'],
       },
       screens: {
-        customMedia: "678px",      
+        customMedia: "678px",
       },
     },
   },
   plugins: [
-    require("flyonui"),
-    require("flyonui/plugin")
+    flyonui,
+    flyonuiPlugin
   ],
-}
-
-
+};

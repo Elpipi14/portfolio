@@ -1,5 +1,6 @@
-import SocialPills from "../SocialPill/SocialPill";
+import ReCAPTCHA from "react-google-recaptcha";
 
+import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
@@ -8,31 +9,38 @@ const Contact = () => {
     <div className="px-2 py-8 my-8 sm:py-4 lg:px-4">
       <div className="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:items-center">
         <div className="mx-auto max-w-xl text-center">
-        <h2 className="text-3xl my-5 p-2 font-extrabold sm:text-5xl text-yellow-300">
-          Contacto:
-        </h2>
-        
-        <p className="text-xl text-gray-300 drop-shadow-xl">
-          Estoy en búsqueda de nuevas oportunidades. Si tienes un proyecto
-          emocionante o una posición disponible, ¡me encantaría ser parte de tu
-          equipo! 🚀
-        </p>
+          <h2 className="text-3xl my-5 p-2 font-extrabold sm:text-5xl text-yellow-300">
+            Contacto:
+          </h2>
 
-        {/* SocilaPills */}
-        <div className="flex  justify-center m-2 p-2">
-          <SocialPills href="https://www.linkedin.com/in/andres-piuzzi/">
-            <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5" />
-            LinkedIn
-          </SocialPills>
-          <SocialPills href="https://github.com/Elpipi14">
-            <img src={GithubIcons} alt="Github" className="w-5 h-5 " />
-            Github
-          </SocialPills>
-        </div>
+          <p className="text-xl text-gray-300 drop-shadow-xl">
+            Estoy en búsqueda de nuevas oportunidades. Si tienes un proyecto
+            emocionante o una posición disponible, ¡me encantaría ser parte de
+            tu equipo! 🚀
+          </p>
+
+          {/* SocilaPills */}
+          <div className="flex  justify-center m-2 p-2">
+            <SocialPills href="https://www.linkedin.com/in/andres-piuzzi/">
+              <img src={LinkedInIcon} alt="LinkedIn" className="w-5 h-5" />
+              LinkedIn
+            </SocialPills>
+            <SocialPills href="https://github.com/Elpipi14">
+              <img src={GithubIcons} alt="Github" className="w-5 h-5 " />
+              Github
+            </SocialPills>
+          </div>
         </div>
       </div>
 
-      <form action="#" method="POST" className="mx-auto my-4 py-4 max-w-xl sm:mt-12">
+      <form
+        action="#"
+        method="POST"
+        className="mx-auto my-4 py-4 max-w-xl sm:mt-4"
+      >
+        <h2 className="text-3xl my-1 p-1 font-extrabold sm:text-5xl text-yellow-300">
+          Enviame:
+        </h2>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
@@ -108,7 +116,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-5">
+          <ReCAPTCHA 
+            className="m-4 flex flex-col items-center"
+            sitekey="TU_SITE_KEY"
+            onChange={(value) => setCaptchaValue(value)}
+          />
           <button
             type="submit"
             className="block w-full rounded-md bg-gray-900 px-5 py-2.5 text-white hover:bg-gray-700 cursor-pointer text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
