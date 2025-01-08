@@ -6,8 +6,8 @@ import GithubIcons from "../../assets/logo/Github.svg";
 
 const Contact = () => {
   return (
-    <div className="px-2 py-8 my-8 sm:py-4 lg:px-4">
-      <div className="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:items-center">
+    <div className="px-2 py-8 my-2 sm:py-4 lg:px-4">
+      <div className="mx-auto max-w-screen-xl px-4 py-2 lg:flex lg:items-center">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-3xl my-5 p-2 font-extrabold sm:text-5xl text-yellow-300">
             Contacto:
@@ -38,8 +38,8 @@ const Contact = () => {
         method="POST"
         className="mx-auto my-4 py-4 max-w-xl sm:mt-4"
       >
-        <h2 className="text-3xl my-1 p-1 font-extrabold sm:text-5xl text-yellow-300">
-          Enviame:
+        <h2 className="text-3xl my-4 p-2 text-center font-extrabold sm:text-left sm:text-5xl text-yellow-300">
+        Contáctame ✍️: 
         </h2>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
