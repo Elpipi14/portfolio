@@ -8,7 +8,6 @@ const Projects = () => {
         Mis Proyectos
       </h2>
       <div className="flex flex-col items-center justify-center m-2 p-2">
-        <h3 className="p-4 text-2xl font-bold mb-2">Tecnologias:</h3>
       </div>
       <ModuleProyect projects={myProjects} />
     </section>

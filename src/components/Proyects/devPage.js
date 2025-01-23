@@ -6,7 +6,7 @@ const myProjects = [
     id: 1,
     title: "E-commerce Sneakers-Shop",
     description:
-      "Desarrollo de una tienda online completa que incluye funcionalidades como autenticación de usuarios, autorización basada en roles, gestión dinámica del carrito de compras y generación automática de tickets. Implementación con Handlebars para el frontend y Node.js en el backend, utilizando MongoDB.",
+      "Tienda online completa con funcionalidades como autenticación de usuarios, autorización basada en roles, gestión dinámica del carrito de compras y generación automática de tickets. Implementación con Handlebars para el frontend y Node.js  mas en el backend, utilizando MongoDB.",
     skills: [
       "Frontend: Handlebars",
       "Backend: Node.js, Express.js",
