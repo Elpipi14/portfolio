@@ -5,6 +5,20 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
+const captchaKey = process.env.REACT_APP_SITE_KEY;
+
+const payload = {
+  ...formData,
+  token: captchaValue,
+};
+
+const response = await fetch(apiUrl, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload),
+});
+
 const Contact = () => {
   const [captchaValue, setCaptchaValue] = useState(null);
   const [formData, setFormData] = useState({
@@ -187,7 +201,7 @@ const Contact = () => {
           <ReCAPTCHA
             ref={captchaRef}
             className="m-4"
-            sitekey="6Le68fUqAAAAAEa7oPJiH9HHgaxsZPsf5n3oSJH3"
+            sitekey={captchaKey} // Reemplaza con tu clave de sitio
             onChange={handleCaptchaChange}
           />
 
