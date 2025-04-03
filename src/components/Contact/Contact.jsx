@@ -6,7 +6,7 @@ import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
-const captchaKey = process.env.REACT_APP_SITE_KEY;
+const captchaKey = process.env.APP_SITE_KEY;
 
 const payload = {
   ...formData,
