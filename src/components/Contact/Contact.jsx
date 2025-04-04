@@ -5,22 +5,10 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
-
-const captchaKey = process.env.REACT_APP_SITE_KEY;
-
-const payload = {
-  ...formData,
-  token: captchaValue,
-};
-
-await fetch(`${apiUrl}/api/contact`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload),
-});
-
 const Contact = () => {
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
+  const captchaKey = process.env.REACT_APP_SITE_KEY;
+  console.log("API URL:", apiUrl);
   const [captchaValue, setCaptchaValue] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -54,7 +42,6 @@ const Contact = () => {
       token: captchaValue,
     };
 
-    console.log(apiUrl)
     try {
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
