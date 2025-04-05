@@ -6,7 +6,7 @@ import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
-const captchaKey = process.env.REACT_APP_SITE_KEY;
+const captchaKey = process.env.REACT_APP_SITE_KEY || "6LceHQorAAAAAMTNDUyx1gKVsQct3n_fGhuy173B";
 
 const Contact = () => {
   const [captchaValue, setCaptchaValue] = useState(null);
@@ -190,7 +190,7 @@ const Contact = () => {
           <ReCAPTCHA
             ref={captchaRef}
             className="m-4"
-            sitekey={captchaKey} // Reemplaza con tu clave de sitio
+            sitekey={captchaKey} 
             onChange={handleCaptchaChange}
           />
 
