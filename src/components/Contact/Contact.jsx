@@ -5,12 +5,10 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-// const apiUrl = process.env.REACT_APP_BACKEND_URL;
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
-  // const [captchaValue, setCaptchaValue] = useState(null);
-  // const captchaRef = useRef(null);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -19,11 +17,6 @@ const Contact = () => {
     message: "",
   });
 
-  // const handleCaptchaChange = (value) => {
-  //   console.log("Captcha token:", value);
-  //   setCaptchaValue(value);
-  // };
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -31,15 +24,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // if (!captchaValue) {
-    //   alert("Por favor verifica el captcha antes de enviar.");
-    //   return;
-    // }
-
-    // Acá podés enviar formData y captchaValue al backend
     const payload = {
-      ...formData,
-      // token: captchaValue,
+      ...formData
     };
 
     try {
@@ -54,8 +40,6 @@ const Contact = () => {
       if (result.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        captchaRef.current.reset(); // Limpia el captcha visualmente
-        setCaptchaValue(null);
       } else {
         alert("Hubo un error al enviar tu mensaje.");
       }
@@ -187,13 +171,6 @@ const Contact = () => {
         </div>
 
         <div className="mt-5 flex flex-col items-center">
-          {/* <ReCAPTCHA
-            ref={captchaRef}
-            className="m-4"
-            sitekey={captchaKey} 
-            onChange={handleCaptchaChange}
-          /> */}
-
           <button
             type="submit"
             className="block w-full rounded-md bg-gray-900 px-5 py-2.5 text-white hover:bg-gray-700 cursor-pointer text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
