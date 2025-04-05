@@ -9,7 +9,9 @@ import GithubIcons from "../../assets/logo/Github.svg";
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
-  const [captchaValue, setCaptchaValue] = useState(null);
+  // const [captchaValue, setCaptchaValue] = useState(null);
+  // const captchaRef = useRef(null);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,12 +19,10 @@ const Contact = () => {
     message: "",
   });
 
-  const captchaRef = useRef(null);
-
-  const handleCaptchaChange = (value) => {
-    console.log("Captcha token:", value);
-    setCaptchaValue(value);
-  };
+  // const handleCaptchaChange = (value) => {
+  //   console.log("Captcha token:", value);
+  //   setCaptchaValue(value);
+  // };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,15 +31,15 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaValue) {
-      alert("Por favor verifica el captcha antes de enviar.");
-      return;
-    }
+    // if (!captchaValue) {
+    //   alert("Por favor verifica el captcha antes de enviar.");
+    //   return;
+    // }
 
     // Acá podés enviar formData y captchaValue al backend
     const payload = {
       ...formData,
-      token: captchaValue,
+      // token: captchaValue,
     };
 
     try {
@@ -187,12 +187,12 @@ const Contact = () => {
         </div>
 
         <div className="mt-5 flex flex-col items-center">
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             ref={captchaRef}
             className="m-4"
             sitekey={captchaKey} 
             onChange={handleCaptchaChange}
-          />
+          /> */}
 
           <button
             type="submit"
