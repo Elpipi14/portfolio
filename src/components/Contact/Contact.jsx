@@ -5,8 +5,8 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
-const captchaKey = process.env.REACT_APP_SITE_KEY;
+// const apiUrl = process.env.REACT_APP_BACKEND_URL;
+// const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
   const [captchaValue, setCaptchaValue] = useState(null);
@@ -17,7 +17,7 @@ const Contact = () => {
     message: "",
   });
 
-  const captchaRef = useRef(null);
+  // const captchaRef = useRef(null);
 
   const handleCaptchaChange = (value) => {
     console.log("Captcha token:", value);
@@ -31,10 +31,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaValue) {
-      alert("Por favor verifica el captcha antes de enviar.");
-      return;
-    }
+    // if (!captchaValue) {
+    //   alert("Por favor verifica el captcha antes de enviar.");
+    //   return;
+    // }
 
     // Acá podés enviar formData y captchaValue al backend
     const payload = {
@@ -43,7 +43,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch(`localhost:8080/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -187,12 +187,12 @@ const Contact = () => {
         </div>
 
         <div className="mt-5 flex flex-col items-center">
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             ref={captchaRef}
             className="m-4"
-            sitekey={captchaKey} // Reemplaza con tu clave de sitio
+            sitekey="6LceHQorAAAAAMTNDUyx1gKVsQct3n_fGhuy173B" // Reemplaza con tu clave de sitio
             onChange={handleCaptchaChange}
-          />
+          /> */}
 
           <button
             type="submit"
