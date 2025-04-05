@@ -1,11 +1,11 @@
 // import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
-
+import axios from "axios";
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-// const apiUrl = "https://backendportfolio.up.railway.app";
+const apiUrl = "https://backendportfolio.up.railway.app";
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
@@ -22,25 +22,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const payload = {
       ...formData,
     };
-
     try {
-      const response = await fetch(`https://backendportfolio.up.railway.app/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await axios.post(`${apiUrl}/api/contact`, payload);
 
-      if (!response.ok) {
-        throw new Error(`Error ${response.status} - ${response.statusText}`);
-      }
-
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
