@@ -36,9 +36,9 @@ const Contact = () => {
       } else {
         alert("Hubo un error al enviar tu mensaje.");
       }
-    } catch (error) {
+    }catch (error) {
       console.error("Error enviando mensaje:", error);
-      alert("Error en el servidor.");
+      alert("Error en el servidor: " + (error.response?.data?.error || error.message));
     }
   };
   
