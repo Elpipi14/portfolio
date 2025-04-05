@@ -22,12 +22,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     const payload = {
-      ...formData,
+      ...formData
     };
+  
     try {
       const response = await axios.post(`${apiUrl}/api/contact`, payload);
-
+  
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
@@ -39,6 +41,7 @@ const Contact = () => {
       alert("Error en el servidor.");
     }
   };
+  
 
   return (
     <div className="px-2 py-8 my-2 sm:py-4 lg:px-4">
