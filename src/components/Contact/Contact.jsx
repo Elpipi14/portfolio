@@ -5,7 +5,7 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = "https://backendportfolio.up.railway.app";
+// const apiUrl = "https://backendportfolio.up.railway.app";
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch(`https://backendportfolio.up.railway.app/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
