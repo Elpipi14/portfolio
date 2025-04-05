@@ -5,11 +5,10 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = import.meta.env.VITE_BACKEND_URL
+const apiUrl = "https://backendportfolio.up.railway.app";
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
 
     const payload = {
-      ...formData
+      ...formData,
     };
 
     try {
@@ -34,6 +33,10 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      if (!response.ok) {
+        throw new Error(`Error ${response.status} - ${response.statusText}`);
+      }
 
       const result = await response.json();
 
@@ -183,4 +186,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;  
+export default Contact;
