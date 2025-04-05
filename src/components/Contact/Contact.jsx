@@ -5,7 +5,7 @@ import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = "https://backendportfolio.up.railway.app";
+// const apiUrl = "https://backendportfolio.up.railway.app";
 // const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
     };
   
     try {
-      const response = await axios.post(`${apiUrl}/api/contact`, payload);
+      const response = await axios.post("https://backendportfolio.up.railway.app/api/contact", payload);
   
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
