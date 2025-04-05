@@ -1,12 +1,12 @@
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
-const captchaKey = process.env.REACT_APP_SITE_KEY || "6LceHQorAAAAAMTNDUyx1gKVsQct3n_fGhuy173B";
+// const apiUrl = process.env.REACT_APP_BACKEND_URL;
+// const captchaKey = process.env.REACT_APP_SITE_KEY;
 
 const Contact = () => {
   const [captchaValue, setCaptchaValue] = useState(null);
