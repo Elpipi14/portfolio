@@ -13,49 +13,31 @@ const Contact = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const payload = {
-      ...formData,
+      ...formData
     };
-
+  
     try {
-      const response = await axios.post(
-        "https://backendportfolio.up.railway.app/api/contact",
-        payload
-      );
-
+      const response = await axios.post("https://backendportfolio.up.railway.app/api/contact", payload);
+  
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
         alert("Hubo un error al enviar tu mensaje.");
       }
-    } catch (error) {
-      console.error("Error enviando mensaje:", error);
-
-      if (error.response?.data?.errors) {
-        // Errores de validación del backend
-        const mappedErrors = {};
-        error.response.data.errors.forEach((err) => {
-          mappedErrors[err.param] = err.msg;
-        });
-        setErrors(mappedErrors);
-      } else {
-        alert(
-          "Error en el servidor: " +
-            (error.response?.data?.error || error.message)
-        );
-      }
+    }catch (error) {
+      alert("Error en el servidor: " + (error.response?.data?.error || error.message));
     }
   };
+  
 
   return (
     <div className="px-2 py-8 my-2 sm:py-4 lg:px-4">
@@ -181,15 +163,9 @@ const Contact = () => {
         <div className="mt-5 flex flex-col items-center">
           <button
             type="submit"
-            disabled={loading}
-            className={`block w-full rounded-md px-5 py-2.5 text-white text-sm font-semibold shadow-sm text-center
-                        ${
-                          loading
-                            ? "bg-gray-500 cursor-not-allowed"
-                            : "bg-gray-900 hover:bg-gray-700"
-                        }
-                        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`}>
-            {loading ? "Enviando..." : "Enviar mensaje"}
+            className="block w-full rounded-md bg-gray-900 px-5 py-2.5 text-white hover:bg-gray-700 cursor-pointer text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Enviar mensaje
           </button>
         </div>
       </form>
