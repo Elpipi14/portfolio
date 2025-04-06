@@ -1,4 +1,5 @@
-import { useState } from "react";
+// import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 import axios from "axios";
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
@@ -16,13 +17,14 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors((prev) => ({ ...prev, [e.target.name]: null }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = { ...formData };
+    const payload = {
+      ...formData,
+    };
 
     try {
       const response = await axios.post(
@@ -33,7 +35,6 @@ const Contact = () => {
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        setErrors({});
       } else {
         alert("Hubo un error al enviar tu mensaje.");
       }
@@ -41,6 +42,7 @@ const Contact = () => {
       console.error("Error enviando mensaje:", error);
 
       if (error.response?.data?.errors) {
+        // Errores de validación del backend
         const mappedErrors = {};
         error.response.data.errors.forEach((err) => {
           mappedErrors[err.param] = err.msg;
@@ -91,11 +93,10 @@ const Contact = () => {
         </h2>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          {/* Nombre */}
           <div>
             <label
               htmlFor="first-name"
-              className="block text-sm font-semibold text-white"
+              className="block text-sm/6 font-semibold text-white"
             >
               Nombre
             </label>
@@ -107,19 +108,16 @@ const Contact = () => {
                 placeholder="Cosme"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                required
               />
-              {errors.firstName && (
-                <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
-              )}
             </div>
           </div>
 
-          {/* Apellido */}
           <div>
             <label
               htmlFor="last-name"
-              className="block text-sm font-semibold text-white"
+              className="block text-sm/6 font-semibold text-white"
             >
               Apellido
             </label>
@@ -131,19 +129,16 @@ const Contact = () => {
                 placeholder="Fulanito"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                required
               />
-              {errors.lastName && (
-                <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
-              )}
             </div>
           </div>
 
-          {/* Email */}
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-white"
+              className="block text-sm/6 font-semibold text-white"
             >
               Email
             </label>
@@ -155,19 +150,16 @@ const Contact = () => {
                 placeholder="tucorreo@ejemplo.com"
                 value={formData.email}
                 onChange={handleChange}
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                required
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
             </div>
           </div>
 
-          {/* Mensaje */}
           <div className="sm:col-span-2">
             <label
               htmlFor="message"
-              className="block text-sm font-semibold text-white"
+              className="block text-sm/6 font-semibold text-white"
             >
               Mensaje
             </label>
@@ -179,22 +171,25 @@ const Contact = () => {
                 placeholder="Escribe tu consulta, idea o propuesta..."
                 value={formData.message}
                 onChange={handleChange}
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                required
               />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
             </div>
           </div>
         </div>
 
-        {/* Botón */}
         <div className="mt-5 flex flex-col items-center">
           <button
             type="submit"
-            className="block w-full rounded-md bg-gray-900 px-5 py-2.5 text-white hover:bg-gray-700 cursor-pointer text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            Enviar mensaje
+            disabled={loading}
+            className={`block w-full rounded-md px-5 py-2.5 text-white text-sm font-semibold shadow-sm text-center
+                        ${
+                          loading
+                            ? "bg-gray-500 cursor-not-allowed"
+                            : "bg-gray-900 hover:bg-gray-700"
+                        }
+                        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`}>
+            {loading ? "Enviando..." : "Enviar mensaje"}
           </button>
         </div>
       </form>
