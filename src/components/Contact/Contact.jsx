@@ -6,6 +6,7 @@ import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
 const Contact = () => {
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
