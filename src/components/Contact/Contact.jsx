@@ -6,7 +6,6 @@ import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
 
 const Contact = () => {
-  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,47 +19,26 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const payload = {
-      ...formData,
+      ...formData
     };
-
+  
     try {
-      const response = await axios.post(
-        "https://backendportfolio.up.railway.app/api/contact",
-        payload
-      );
-
+      const response = await axios.post("https://backendportfolio.up.railway.app/api/contact", payload);
+  
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
         alert("Hubo un error al enviar tu mensaje.");
       }
-    } catch (error) {
+    }catch (error) {
       console.error("Error enviando mensaje:", error);
-
-      if (error.response?.status === 429) {
-        alert(
-          "Has enviado demasiadas solicitudes. Esperá un momento antes de volver a intentar."
-        );
-      } else if (error.response?.data?.errors) {
-        const mappedErrors = {};
-        error.response.data.errors.forEach((err) => {
-          mappedErrors[err.param] = err.msg;
-        });
-        setErrors(mappedErrors);
-        alert("Por favor completá correctamente todos los campos.");
-      } else {
-        alert(
-          "Error del servidor: " +
-            (error.response?.data?.error || error.message)
-        );
-      }
-    } finally {
-      setLoading(false);
+      alert("Error en el servidor: " + (error.response?.data?.error || error.message));
     }
   };
+  
 
   return (
     <div className="px-2 py-8 my-2 sm:py-4 lg:px-4">
@@ -164,7 +142,7 @@ const Contact = () => {
           <div className="sm:col-span-2">
             <label
               htmlFor="message"
-              className="block text-sm font-semibold text-white"
+              className="block text-sm/6 font-semibold text-white"
             >
               Mensaje
             </label>
@@ -176,11 +154,9 @@ const Contact = () => {
                 placeholder="Escribe tu consulta, idea o propuesta..."
                 value={formData.message}
                 onChange={handleChange}
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                required
               />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
             </div>
           </div>
         </div>
