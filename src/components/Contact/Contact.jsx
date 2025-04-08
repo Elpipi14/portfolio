@@ -45,7 +45,7 @@ const Contact = () => {
 
       if (Array.isArray(responseErrors)) {
         const mensajes = responseErrors.map((err) => `${err.msg}`).join("\n");
-        notifyError(ErrorToast(mensajes));
+        notifyError(ErrorToast(responseErrors))
       } else {
         notifyError(
           "Error en el servidor: " +

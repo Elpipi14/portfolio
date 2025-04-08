@@ -28,11 +28,9 @@ export const notifyError = (msg) => toast.error(msg)
 export const ErrorToast = (msg) => {
   return (
     <div>
-      <p>
-        <strong>Error en el formulario:</strong>
-      </p>
+      <p><strong>Error en el formulario:</strong></p>
       {msg.map((err, i) => (
-        <div key={i}>{err.msg}</div> // cada mensaje en una línea nueva
+        <div key={i}>• {err.msg}</div>
       ))}
     </div>
   );
