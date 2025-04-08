@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
-import { notifyError } from "../Errors/ErrorsForm";
+import { notifyError, ErrorToast } from "../Errors/ErrorsForm";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
