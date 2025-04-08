@@ -1,7 +1,7 @@
 // import ReCAPTCHA from "react-google-recaptcha";
-import {useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
@@ -21,34 +21,39 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const payload = {
-      ...formData
+      ...formData,
     };
-  
+
     try {
-      const response = await axios.post("https://backendportfolio.up.railway.app/api/contact", payload);
-  
+      const response = await axios.post(
+        "https://backendportfolio.up.railway.app/api/contact",
+        payload
+      );
+
       if (response.data.success) {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
         notifyError("Hubo un error al enviar tu mensaje.");
       }
-    }catch (error) {
+    } catch (error) {
       console.error("Error enviando mensaje:", error);
-    
+
       const responseErrors = error.response?.data?.errors;
-    
+
       if (Array.isArray(responseErrors)) {
-        const mensajes = responseErrors.map(err => `• ${err.msg}`).join("\n");
-        notifyError("Error en el formulario:\n" + mensajes);
+        const mensajes = responseErrors.map((err) => `${err.msg}`).join("\n");
+        notifyError(ErrorToast(mensajes));
       } else {
-        notifyError("Error en el servidor: " + (error.response?.data?.error || error.message));
+        notifyError(
+          "Error en el servidor: " +
+            (error.response?.data?.error || error.message)
+        );
       }
     }
   };
-  
 
   return (
     <div className="px-2 py-8 my-2 sm:py-4 lg:px-4">
@@ -102,7 +107,6 @@ const Contact = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                
               />
             </div>
           </div>
@@ -123,7 +127,6 @@ const Contact = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-               
               />
             </div>
           </div>
@@ -144,7 +147,6 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                
               />
             </div>
           </div>
@@ -165,7 +167,6 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                
               />
             </div>
           </div>
