@@ -42,7 +42,7 @@ const Contact = () => {
     
       if (Array.isArray(responseErrors)) {
         const mensajes = responseErrors.map(err => `• ${err.msg}`).join("\n");
-        notifyError("Errores en el formulario:\n" + mensajes);
+        notifyError("Error en el formulario:\n" + mensajes);
       } else {
         notifyError("Error en el servidor: " + (error.response?.data?.error || error.message));
       }
