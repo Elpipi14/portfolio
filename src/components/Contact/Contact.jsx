@@ -94,7 +94,7 @@ const Contact = () => {
             <div className="mt-2.5">
               <input
                 id="first-name"
-                lastName="firstName"
+                name="firstName"
                 type="text"
                 placeholder="Cosme"
                 value={formData.firstName}
@@ -115,7 +115,7 @@ const Contact = () => {
             <div className="mt-2.5">
               <input
                 id="last-name"
-                name="lastName"
+                lastName="lastName"
                 type="text"
                 placeholder="Fulanito"
                 value={formData.lastName}
