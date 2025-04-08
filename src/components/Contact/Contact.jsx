@@ -35,7 +35,15 @@ const Contact = () => {
       }
     }catch (error) {
       console.error("Error enviando mensaje:", error);
-      alert("Error en el servidor: " + (error.response?.data?.error || error.message));
+    
+      const responseErrors = error.response?.data?.errors;
+    
+      if (Array.isArray(responseErrors)) {
+        const mensajes = responseErrors.map(err => `• ${err.msg}`).join("\n");
+        alert("Errores en el formulario:\n" + mensajes);
+      } else {
+        alert("Error en el servidor: " + (error.response?.data?.error || error.message));
+      }
     }
   };
   
