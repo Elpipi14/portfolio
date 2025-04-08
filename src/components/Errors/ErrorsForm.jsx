@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Bounce  } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Exportá el container (para renderizar) y el toast (para usar)
