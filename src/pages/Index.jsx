@@ -5,6 +5,8 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "../Utils/ScrollToTop";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const Index = () => {
   return (
@@ -17,6 +19,19 @@ const Index = () => {
           <Route path="/contacto" element={<Contact />} />
           <Route path="/proyectos" element={<Proyects />} />
           <Route path="*" element={<div>404 - Página no encontrada</div>} />
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,6 +1,7 @@
 // import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
+import {useState } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify';
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
@@ -31,7 +32,7 @@ const Contact = () => {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
-        alert("Hubo un error al enviar tu mensaje.");
+        toast.error("Hubo un error al enviar tu mensaje.");
       }
     }catch (error) {
       console.error("Error enviando mensaje:", error);
@@ -40,9 +41,9 @@ const Contact = () => {
     
       if (Array.isArray(responseErrors)) {
         const mensajes = responseErrors.map(err => `• ${err.msg}`).join("\n");
-        alert("Errores en el formulario:\n" + mensajes);
+        toast.error("Errores en el formulario:\n" + mensajes);
       } else {
-        alert("Error en el servidor: " + (error.response?.data?.error || error.message));
+        toast.error("Error en el servidor: " + (error.response?.data?.error || error.message));
       }
     }
   };
