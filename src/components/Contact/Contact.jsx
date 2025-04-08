@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import SocialPills from "../SocialPill/SocialPill";
 import LinkedInIcon from "../../assets/logo/LinkedIn.svg";
 import GithubIcons from "../../assets/logo/Github.svg";
+import { notifyError } from "../Errors/ErrorsForm";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Contact = () => {
         alert("¡Mensaje enviado con éxito!");
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
       } else {
-        toast.error("Hubo un error al enviar tu mensaje.");
+        notifyError("Hubo un error al enviar tu mensaje.");
       }
     }catch (error) {
       console.error("Error enviando mensaje:", error);
@@ -41,9 +42,9 @@ const Contact = () => {
     
       if (Array.isArray(responseErrors)) {
         const mensajes = responseErrors.map(err => `• ${err.msg}`).join("\n");
-        toast.error("Errores en el formulario:\n" + mensajes);
+        notifyError("Errores en el formulario:\n" + mensajes);
       } else {
-        toast.error("Error en el servidor: " + (error.response?.data?.error || error.message));
+        notifyError("Error en el servidor: " + (error.response?.data?.error || error.message));
       }
     }
   };
