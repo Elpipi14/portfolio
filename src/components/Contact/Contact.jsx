@@ -86,7 +86,7 @@ const Contact = () => {
             <div className="mt-2.5">
               <input
                 id="first-name"
-                name="firstName"
+                lastName="firstName"
                 type="text"
                 placeholder="Cosme"
                 value={formData.firstName}
